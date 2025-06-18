@@ -16,7 +16,7 @@ function App() {
     setResult('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/analyze', { text });
+      const response = await axios.post('https://sentimentapp-zem2.onrender.com', { text });
       setResult(response.data.sentiment);
     } catch (error) {
       console.error("Error analyzing sentiment:", error);
