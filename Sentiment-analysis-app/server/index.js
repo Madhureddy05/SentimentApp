@@ -13,7 +13,7 @@ app.post('/api/analyze', async (req, res) => {
     if (!text) return res.status(400).json({ error: 'Text is required' });
 
     try {
-        const response = await axios.post('http://127.0.0.1:5001/predict', { text });
+        const response = await axios.post('https://sentimentapp-zem2.onrender.com/predict', { text });
         const sentiment = response.data.sentiment;
 
         res.json({ sentiment });
